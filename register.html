@@ -1,0 +1,242 @@
+複製
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    .page {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        position: fixed;
+        width: 800px;
+        height: 600px;
+        border: 1px solid;
+    }
+
+    .top {
+        flex-direction: row;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .mid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bottom {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ref {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bottomButton {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 10px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1F31D3;
+        border: 1px solid;
+        height: auto;
+    }
+
+    .header p {
+        text-align: center;
+        color: #FFF72D;
+        font-size: 36px;
+        margin: 0;
+    }
+
+    .blue {
+        color: #00C2FF;
+    }
+
+    .red {
+        color: #FF0000;
+    }
+
+    .text1 {
+        text-align: center;
+    }
+
+    .text2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        margin-right: 60px;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text3 {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .input {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bottomText {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 10px;
+    }
+</style>
+
+<body>
+    <div class="page">
+        <div class="top">
+            <div class="header">
+                <p>註冊</p>
+            </div>
+        </div>
+        <div class="mid">
+            <div class="ref">
+                <div class="text1">
+                    請參考下列的範例填寫您的註冊資料
+                </div>
+                <div class="text2">
+                    <div class="left">
+                        <div class="text3">
+                            Email:&nbsp;<div class="blue">whoami@ntu.edu.tw</div>
+                        </div>
+                        <div class="text3">
+                            使用者代號:&nbsp;<div class="blue">PTTer</div>
+                        </div>
+                        <div class="text3">
+                            密碼:&nbsp;<div class="blue">Iluv'ptt</div>
+                        </div>
+                        <div class="text3">
+                            您的暱稱:&nbsp;<div class="blue">批踢踢常駐程式</div>
+                        </div>
+                        <div class="text3">
+                            真實姓名:&nbsp;<div class="blue">艾打逼</div>
+                        </div>
+                        <div class="text3">
+                            服務單位:&nbsp;<div class="blue">XX大學XX學系XX年入學</div>
+                        </div>
+                        <div class="text3">
+                            目前住址:&nbsp;<div class="blue">新竹縣子虛鄉烏有村1號</div>
+                        </div>
+
+                    </div>
+                    <div class="right">
+                        <div class="text3">
+                            ← 您的 E-Mail address
+                        </div>
+                        <div class="text3">
+                            ← 輸入想用的英文代號
+                        </div>
+                        <div class="text3">
+                            ← 請設定密碼，螢幕顯示*以保密
+                        </div>
+                        <div class="text3">
+                            ← 您發表文章用的筆名或綽號
+                        </div>
+                        <div class="text3">
+                            ← 您的<div class="red">真實姓名</div>
+                        </div>
+                        <div class="text3">
+                            ← 您的<div class="red">學校系所名稱(含入學年)</div>
+                        </div>
+                        <div class="text3">
+                            ← 您目前的<div class="red">住家地址(含樓層)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="input">
+                <div class="bottomText">
+                    &ensp;&emsp;&emsp;&emsp;Email：
+                    <div class="textField1">
+                        <input type="text" id="textField" name="textField"style="width: 300px;"placeholder="您的 E-Mail address。">
+                    </div>
+                </div>
+                <div class="bottomText">
+                    &emsp;使用者代號：
+                    <div class="textField1">
+                        <input type="text" id="textField" name="textField" placeholder="至少四個字元，不宜採用數字。" style="width: 300px;">
+                    </div>
+                </div>
+                <div class="bottomText">
+                    &emsp;&emsp;&emsp;&emsp;密碼：
+                    <div class="textField1">
+                        <input type="password" id="textField" name="textField"style="width: 300px;" placeholder="至少四個字元，不可與 [ID] 雷同，不宜全部小寫。">
+                    </div>
+                </div>
+                <div class="bottomText">
+                    再次輸入密碼：
+                    <div class="textField1">
+                        <input type="password" id="textField" name="textField"style="width: 300px;"placeholder="確認你的密碼。">
+                    </div>
+                </div>
+                <div class="bottomText">
+                    &emsp;&emsp;您的暱稱：
+                    <div class="textField1">
+                        <input type="text" id="textField" name="textField" style="width: 300px;"placeholder="您發表文章用的筆名或綽號。">
+                    </div>
+                </div>
+                <div class="bottomText">
+                    &emsp;&emsp;真實姓名：
+                    <div class="textField1">
+                        <input type="text" id="textField" name="textField"style="width: 300px;"placeholder="您的真實姓名。">
+                    </div>
+                </div>
+                <div class="bottomText">
+                    &emsp;&emsp;服務單位：
+                    <div class="textField1">
+                        <input type="text" id="textField" name="textField"style="width: 300px;"placeholder="您的學校系所名稱(含入學年)。">
+                    </div>
+                </div>
+                <div class="bottomText">
+                    &emsp;&emsp;目前住址：
+                    <div class="textField1">
+                        <input type="text" id="textField" name="textField"style="width: 300px;"placeholder="您目前的住家地址(含樓層)。">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="bottomButton">
+            <button><a href="login.html">確定註冊</a></button>
+        </div>
+    </div>
+</body>

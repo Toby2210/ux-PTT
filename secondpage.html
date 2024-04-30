@@ -1,0 +1,453 @@
+<style>
+  .post {
+    padding: 16px;
+    border-bottom: 1px solid;
+    border-color: zinc-700;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+  }
+
+  .mainMenu {
+    /* 删除 overflow-y: auto; */
+    height: auto;
+  }
+
+  .postHeader {
+    background-color: #1F31D3;
+    border: 1px solid;
+    height: auto;
+  }
+
+  .comment {
+    padding-left: 10px;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    overflow-y: auto;
+    border-top: 1px solid;
+    border: 1px solid;
+    border-color: zinc-700;
+  }
+
+  .content {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 88px;
+    border-right: 1px solid;
+    padding-left: 10px;
+  }
+
+  .button-container {
+    position: absolute;
+    right: 16px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .button-container button {
+    margin-left: 8px;
+  }
+
+  .page {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    position: fixed;
+    width: 800px;
+    height: 600px;
+    border: 1px solid;
+  }
+
+  .mainMenuHeader {
+    padding: 16px;
+    border-bottom: 1px solid;
+    border-color: zinc-700;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    z-index: 1;
+  }
+
+  .menu_header {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    border-bottom: 1px solid;
+    padding: 16px;
+    justify-content: center;
+  }
+
+
+  body {
+    background-color: black;
+    color: white;
+  }
+
+  /* 添加以下样式规则 */
+  .left,
+  .right {
+    overflow-y: auto;
+  }
+
+  .menu.hide {
+    display: none;
+  }
+
+  .secondMenu.hide {
+    display: none;
+  }
+
+  .menu_content {
+    background-color: grey;
+    padding: 16px;
+    border-bottom: 1px solid;
+    border-color: zinc-700;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+  }
+
+  .thridMenu.hide {
+    display: none;
+  }
+</style>
+
+
+<script>
+  function toggleMainMenu() {
+    var mainMenu = document.querySelector('.menu');
+    var secondMenu = document.querySelector('.secondMenu');
+    var thridMenu = document.querySelector('.thridMenu')
+
+    if (!mainMenu.classList.contains('hide') || !secondMenu.classList.contains('hide')) {
+      mainMenu.classList.add('hide');
+      secondMenu.classList.add('hide');
+      thridMenu.classList.add('hide')
+    } else if (mainMenu.classList.contains('hide') || secondMenu.classList.contains('hide')) {
+      mainMenu.classList.remove('hide')
+      secondMenu.classList.add('hide')
+      thridMenu.classList.add('hide')
+    }
+
+
+  }
+  function toggleMainMenu2() {
+    var mainMenu = document.querySelector('.menu');
+    var secondMenu = document.querySelector('.secondMenu');
+    var thridMenu = document.querySelector('.thridMenu')
+    mainMenu.classList.add('hide');
+    secondMenu.classList.remove('hide')
+    thridMenu.classList.add('hide')
+  }
+  function toggleMainMenu3() {
+    var mainMenu = document.querySelector('.menu');
+    var secondMenu = document.querySelector('.secondMenu');
+    var thridMenu = document.querySelector('.thridMenu')
+    mainMenu.classList.add('hide');
+    secondMenu.classList.add('hide')
+    thridMenu.classList.remove('hide')
+
+  }
+  function toggleMainMenu4() {
+    var mainMenu = document.querySelector('.menu');
+    var secondMenu = document.querySelector('.secondMenu');
+    var thridMenu = document.querySelector('.thridMenu')
+
+    mainMenu.classList.add('hide');
+    secondMenu.classList.add('hide')
+    thridMenu.classList.add('hide')
+
+  }
+  function changeColor(element) {
+    element.style.backgroundColor = '#4c4c4c';
+  }
+
+  function resetColor(element) {
+    element.style.backgroundColor = '';
+  }
+  function changeContent2() {
+    var rightDiv = document.querySelector('.right');
+    rightDiv.innerHTML = `
+    <div class="postHeader">
+        <p>作者：bigcar0302 (bigcar0302)</p>
+        <p>標題：[問題] 想請問本週日本站有沒有網路直播的連結可</p>
+        <p>時間：Fri Apr 5 22:27:42 2024</p>
+      </div>
+
+      <div class="content">
+        <p>我是新加入的F1迷，想請問明天、後天日本站的賽事有沒有網路直播的連結可以收看！！</p>
+        <p>！拜託拜託，希望可以提供（英文原音也沒關係</p>
+        <p></p>
+      </div>
+      <div class="comment">
+        <p>TKB5566: 請支持正版</p>
+      </div>
+      <div class="comment">
+        <p>applestars: Hami video運動館會員或第四台緯來轉播 但這應該是伸手牌問題</p>
+      </div>
+      <div class="comment">
+        <p>user3 : Good!</p>
+      </div>
+      <div class="comment">
+        <p>user4 : Nice!</p>
+      </div>
+      <div class="comment">
+        <p>user5 : Great!</p>
+      </div>
+      <div class="comment">
+        <p>user6 : Good job</p>
+      </div>
+      <div class="button-container">
+        <button>推文</button>
+        <button>回應</button>
+      </div>
+    `
+  }
+  function changeContent1() {
+    var rightDiv = document.querySelector('.right');
+    rightDiv.innerHTML = `
+        <div class="postHeader">
+          <p>作者：darren2586</p>
+          <p>標題：[閒聊] Gasly爸媽遇到好心的日本人</p>
+          <p>時間：Fri Apr  5 21:30:52 2024</p>
+        </div>
+
+        <div class="content">
+          <p>同級生の女性からLINEがきた。</p>
+          <p>鈴鹿駅で外国人ご夫婦がホテルまでの足がないと困ってたらしく、載せて行ったと。クルマの中でインスタの画面を見せてきて、「これうちの息子、F1に出てるの」と。ホテル着いてめっちゃお礼言われて、これをもらってと置いていったと。おいおいおいおい</p>
+          <p>同級生的女性朋友的Line:
+          剛剛在鈴鹿站看到兩個外國人回不了飯店就順便載他們回去了。
+          他們在車上拿Instagram 的照片跟我說：「我兒子，明天會出賽喔」
+          到了之後很有禮貌一直道謝，然後給了我這個</p>
+          <p>喂喂喂</p>
+        </div>
+
+        <div class="comment">
+          <p>carlchang092：聽到有人說兒子明天要出賽會瞬間嚇到吧XDDD</p>
+        </div>
+        <div class="comment">
+          <p>leglerg：請問哪裡可以撿到車手的爸媽XD</p>
+        </div>
+        <div class="comment">
+          <p>potatoes：我也想撿</p>
+        </div>
+        <div class="comment">
+          <p>TheoEpstein：喂喂喂w</p>
+        </div>
+        <div class="comment">
+          <p>zack860420：我以為車手家屬會跟著團隊一起進出</p>
+        </div>
+        <div class="comment">
+          <p>karkkunt：如果是發在IG，兒子就會馬上點讚</p>
+        </div>
+        <div class="button-container">
+        <button>推文</button>
+        <button>回應</button>
+      </div>
+      `;
+  }
+</script>
+
+<body>
+  <div class="page">
+    <div class="left" style="width: 33.33%;height: 100%;">
+      <div class="flex flex-col w-1/3 border-r border-zinc-700 dark:border-zinc-700"
+        style="display: flex; flex-direction: column;border: 1px solid;border-color: zinc-700;">
+        <div class="mainMenuHeader">
+          <button class="menuButton" onclick="toggleMainMenu()">
+            <img src="menu_black_24dp.svg"></img>
+          </button>
+          <p class="text-lg" style="font-size: 1.125rem;padding-left: 10px;">PttRacingCar</p>
+        </div>
+        <div class="menu hide">
+          <div class="menu_header">
+            主選單
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            <img src="today_black_24dp.svg"></img>
+            精華公佈欄
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            <img src="favorite_black_24dp.svg"></img>
+            我的最愛
+          </div>
+          <div class="menu_content" onclick="toggleMainMenu2()" onmouseover="changeColor(this)"
+            onmouseout="resetColor(this)">
+            <img src="forum_black_24dp.svg"></img>
+            分組討論區
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            <img src="email_black_24dp.svg"></img>
+            私人信件區
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            <img src="settings_black_24dp.svg"></img>
+            個人設定區
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            <img src="trending_up_black_24dp.svg"></img>
+            系統資訊區
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            <img src="logout_black_24dp.svg"></img>
+            登出
+          </div>
+        </div>
+        <div class="secondMenu hide">
+          <div class="menu_header">
+            分組討論區
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            市民廣場
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            臺灣大學
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            政治大學
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            青蘋果樹
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            活動中心
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            視聽劇場
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            戰略高手
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            卡漫夢工廠
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            生活娛樂館
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            國家研究院
+          </div>
+          <div class="menu_content" onclick="toggleMainMenu3()" onmouseover="changeColor(this)"
+            onmouseout="resetColor(this)">
+            國家體育場
+          </div>
+        </div>
+
+        <div class="thridMenu hide">
+          <div class="menu_header">
+            國家體育場
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            SportService
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            HallofFame
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            WorldGames
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            PttFootball
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            PttBall
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            PttBaseball
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            PttSports
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            PttTennis
+          </div>
+          <div class="menu_content" onclick="toggleMainMenu4()" onmouseover="changeColor(this)"
+            onmouseout="resetColor(this)">
+            PttRacingCar
+          </div>
+          <div class="menu_content" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            PttBasket
+          </div>
+        </div>
+
+
+        <div class="mainMenu">
+          <div class="post" onclick="changeContent2()" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            bigcar0302<br>
+            [問題] 想請問本週日本站有沒有網路直播的連結可
+          </div>
+          <div class="post" onmouseover="changeColor(this)" onmouseout="resetColor(this)" onclick="changeContent1()">
+            darren2586<br>[閒聊] Gasly爸媽遇到好心的日本人
+          </div>
+          <div class="post" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            Vincent8026<br>[情報] 2024 Japanese GP FP1 Result
+          </div>
+          <div class="post" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            Wall62<br> Sargeant 將缺席FP2
+          </div>
+          <div class="post" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            dannylan07<br>FP1紅旗 Logan上牆
+          </div>
+          <div class="post" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            milkypine<br>[閒聊] 2024車手日本時裝秀
+          </div>
+          <div class="post" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            idealcutymmd<br>[閒聊] 樂樂的日本站特別頭盔
+          </div>
+          <div class="post" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            reccatsai [專訪] 空間藝士 Ep.19 伊那那美
+          </div>
+          <div class="post" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            reccatsai [專訪] 空間藝士 Ep.19 伊那那美
+          </div>
+          <div class="post" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            reccatsai [專訪] 空間藝士 Ep.19 伊那那美
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right" style="width: 66.66%;height: 100%;">
+      <div class="postHeader">
+        <p>作者：bigcar0302 (bigcar0302)</p>
+        <p>標題：[問題] 想請問本週日本站有沒有網路直播的連結可</p>
+        <p>時間：Fri Apr 5 22:27:42 2024</p>
+      </div>
+
+      <div class="content">
+        <p>我是新加入的F1迷，想請問明天、後天日本站的賽事有沒有網路直播的連結可以收看！！</p>
+        <p>！拜託拜託，希望可以提供（英文原音也沒關係</p>
+        <p></p>
+      </div>
+      <div class="comment">
+        <p>TKB5566: 請支持正版</p>
+      </div>
+      <div class="comment">
+        <p>applestars: Hami video運動館會員或第四台緯來轉播 但這應該是伸手牌問題</p>
+      </div>
+      <div class="comment">
+        <p>user3 : Good!</p>
+      </div>
+      <div class="comment">
+        <p>user4 : Nice!</p>
+      </div>
+      <div class="comment">
+        <p>user5 : Great!</p>
+      </div>
+      <div class="comment">
+        <p>user6 : Good job</p>
+      </div>
+
+      <div class="button-container">
+        <button>推文</button>
+        <button>回應</button>
+      </div>
+    </div>
+  </div>
+</body>
